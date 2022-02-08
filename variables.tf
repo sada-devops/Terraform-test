@@ -6,6 +6,10 @@ variable "aws_region" {
 variable "az" {
     description = "default aws region"
     type = list(string)
+    default = [
+    "ap-south-1a",
+    "ap-south-1b",
+    "ap-south-1c"]
 }
 
 #vpc cidr block
@@ -17,8 +21,10 @@ variable "vpc_cidr_block" {
 
 variable "public_subnet" {
     description = "public subnet cidr"
-    type = string
-    default = "10.0.1.0/24"
+    type = list(string)
+    default = [
+    "10.0.1.0/24",
+    "10.0.2.0/24"]
 }
 
 variable "env" {

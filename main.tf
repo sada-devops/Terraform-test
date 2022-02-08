@@ -20,7 +20,7 @@ resource "aws_vpc" "vpc_test" {
 
 resource "aws_subnet" "public_subnet" {
   vpc_id = aws_vpc.vpc_test.id
-  cidr_block = var.public_subnet
+  cidr_block = var.public_subnet[0]
   availability_zone = var.az[0]
   tags = {
     Name = "${var.env}-subnet-1"
