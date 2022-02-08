@@ -47,3 +47,39 @@ tags = {
 }
   
 }
+
+resource "aws_route_table_association" "public_RTA" {
+  subnet_id = aws_subnet.public_subnet.id
+  route_table_id = aws_route_table.publice-rt.id
+}
+
+resource "aws_security_group" "test_sg" {
+  name = "test_sg"
+  vpc_id = aws_vpc.vpc_test.id
+
+  ingress {
+    from_port = 22
+    to_port = 22
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  
+  ingress {
+    from_port = 8080
+    to_port = 8080
+    protocol = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port = 0
+    to_port = 0
+    protocol = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+    prefix_list_ids = []
+  }
+
+  tags = {
+    Name =  "${var.env}-sg"
+  }
+}
