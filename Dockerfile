@@ -6,3 +6,4 @@ FROM ubuntu
 
 RUN apt-get update -y
 RUN apt install apache2 -y
+RUN service apache2 status
