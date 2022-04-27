@@ -1,8 +1,8 @@
 #pull base image
 
-FROM ubuntu:18.04
+FROM ubuntu
 
 #update and install apache2
 
-RUN sudo apt-get update -y
-RUN sudo apt install apache2 -y
+RUN apt-get update -y
+RUN apt install apache2 -y
