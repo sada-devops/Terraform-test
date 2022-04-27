@@ -22,3 +22,11 @@ terraform state > current state
 terraform backup > backup of configuration
 
 terraform global variable > export TF_VAR.variablename="value"
+
+sudo apt install php
+
+sudo apt install libapache2-mod-php
+
+sudo a2enmod php
+
+sudo systemctl restart apache2
