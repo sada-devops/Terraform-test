@@ -1,0 +1,11 @@
+172.17.0.0/16 docker cidr
+docker bridge
+docker 0 - switch/bridge - 172.17.0.1
+veth0/1/2 -virtual ethernet to connect to containers.
+
+ip a - to check ip address
+
+to check container ip
+    docker exec -it containername /bin/bash
+    ip a -doesnt work due to lightweight and no utils installed.
+    use docker inspect containername
