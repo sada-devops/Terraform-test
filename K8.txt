@@ -1,0 +1,6 @@
+minikube - Master and worker in one machine
+kubeadm - Master and worker isolated.
+    extensive requirement.
+
+k8 offical website for minikube installation-choose OS.
+
